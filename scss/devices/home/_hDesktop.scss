@@ -18,6 +18,7 @@
             }
         }
         h2{
+            color: $navy;
             font-size: 38px;
             text-shadow: 4px 5px 1px rgba(54,119,203,0.45);
         }
@@ -39,6 +40,12 @@
 
     }
     .home-main{
+        display: flex;
+        flex-direction: column;
+        // column-gap: 10vh;
+        align-items: center;
+        // background-color: $gray;
+        background-color: whitesmoke;
         img{
             width: 40vh;
         }
@@ -68,6 +75,7 @@
             background-color: white;
             padding: 2%;
             border-radius: 10px;
+            color: black;
         }
         video{
             width: 100%;
@@ -80,7 +88,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            background-color: rgba(0,0,0,0.2);
+            background-color: rgba(0,0,0,0.4);
             z-index: 2;
         }
         article{
@@ -89,9 +97,111 @@
             z-index: 3;
             text-align: center;
         }
-
-
     }
+    .slide{
+        padding: 5vh 0;
+        display: flex;
+        column-gap: 3vh;
+        align-items: center;
+        img{
+            width: 35vh;
+        }
+        i{
+            font-size: 30px;
+            color: $lightblue;
+        }
+    }
+    .trend,
+    .new{
+        width: 80%;
+        padding: 10vh 0;
+        img{
+            width: 100%;
+        }
+        >section{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 3vh;
+            row-gap: 3vh;
+        }
+        h2{
+            padding-bottom: 5vh;
+        }
+        figure{
+            width: 20%;
+            padding: 2vh;
+            background-color: white;
+            @include columnRow(3vh);
+            // column-gap: 2vh;
+        }
+        figcaption{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .gallery{
+        width: 95%;
+        padding: 10vh 0;
+    }
+    .about{
+        width: 80%;
+        padding: 10vh 0;
+        figure{
+            display: flex;
+            column-gap: 8vh;
+        }
+    }
+
+
+    footer{
+        color: white;
+        background-color: $navy;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        >section{
+            width: 95%;
+        }
+        h2{
+            padding: 2vh 0;
+        }
+        article{
+            display: flex;
+            // justify-content: space-between;
+            column-gap: 20vh;
+            padding-bottom: 5vh;
+        }
+        p{
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid $gray;
+            padding: 1%;
+        }
+        ul{
+            @include columnRow(1vh);
+        }
+        a{
+            color: $gray;
+        }
+        .sns{
+           flex-direction: row;
+            column-gap: 3vh;
+            padding-right: 15vh;
+            li{
+                width: 6vh;
+                height: 6vh;
+                background-color: $gray;
+                border-radius: 50%;
+                display: flex;
+                @include flex-center;
+            }
+            i{
+                color: $darkblue;
+            }
+        }
+    }
+
 
 
 }
