@@ -1,0 +1,97 @@
+@media (min-width: $desktopScreen){
+
+
+
+    header{
+        padding: 3vh 0;
+        display: flex;
+        @include flex-center;
+        >section{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95%;
+            >a{
+                display: flex;
+                align-items: center;
+                column-gap: 1vh;
+            }
+        }
+        h2{
+            font-size: 38px;
+            text-shadow: 4px 5px 1px rgba(54,119,203,0.45);
+        }
+        span{
+            color: $darkblue;
+        }
+        ul{
+            display: flex;
+            column-gap: 5vh;
+            font-size: 20px;
+        }
+        article{
+            display: flex;
+            column-gap: 3vh;
+        }
+        a{
+            color: black;
+        }
+
+    }
+    .home-main{
+        img{
+            width: 40vh;
+        }
+    }
+    .home-top{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        section{
+            position: relative;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            font-size: 50px;
+            color: white;
+            padding-bottom: 2vh;
+        }
+        p{
+            font-size: 30px;
+            color: white;
+            padding-bottom: 9vh;
+        }
+        a{
+            background-color: white;
+            padding: 2%;
+            border-radius: 10px;
+        }
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+        }
+        .video-bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        article{
+            position: relative;
+            top:25%;
+            z-index: 3;
+            text-align: center;
+        }
+
+
+    }
+
+
+}
