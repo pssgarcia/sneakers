@@ -175,7 +175,8 @@ li {
   }
   .about {
     width: 80%;
-    padding: 10vh 0;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
   }
   .about figure {
     display: flex;
