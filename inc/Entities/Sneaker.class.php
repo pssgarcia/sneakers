@@ -4,7 +4,7 @@ class Sneaker {
    private int $sneakerId;
    private string $brand;
    private string $sneakerName;
-   private float $price;
+   private string $price;
    private string $releaseDate;
    private float $size;
    private string $buyerRegion;
