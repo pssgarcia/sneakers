@@ -6,7 +6,7 @@ class Users {
     private string $userName;
     private string $userEmail;
     private string $userPassword;
-    private float $userPhone;
+    private string $userPhone;
     private string $userAddress;
 
     public function getUserId(){
