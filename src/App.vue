@@ -1,26 +1,30 @@
 <template>
-  <Header/>
-  <Nav/>
-  <Footer/>
+
+  <NavComponent/>
+  <HeaderComponent/>
+  <FooterComponent/>
+
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Nav from './components/Nav.vue'
-import Footer from './components/Footer.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+import NavComponent from './components/NavComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Nav,
-    Footer
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
   }
 }
 </script>
 
 <style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 @import url("../src/css/style.css");
+
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

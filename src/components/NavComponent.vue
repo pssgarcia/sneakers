@@ -13,17 +13,19 @@
             </ul>
             <article>
                 <form action="#">
-                    <input type="search">
-                    <i class="fa-light fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Search">
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </form>
                 <a href="#">
-                    <i class="fa-light fa-heart"></i>
+                   <i class="fa-solid fa-heart"></i>
                 </a>
                 <a href="#">
-                    <i class="fa-sharp fa-light fa-cart-shopping"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </a>
                 <a href="#">
-                    <i class="fa-light fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
                 </a>
             </article>
         </section>
@@ -33,7 +35,7 @@
 <script>
 
 export default{
-    name: 'Nav',
+    name: 'NavComponent',
 
 }
 </script>
