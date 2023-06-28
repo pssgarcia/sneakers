@@ -27,4 +27,12 @@ presentation Link :https://docs.google.com/presentation/d/1yTiJqxPgjPOLBGoc4Cn4U
 
 document :https://docs.google.com/document/d/18sBmT96DCxAWkqnc9cS_iz7yJvhU4Ly6/edit?usp=sharing&ouid=104372735131293142329&rtpof=true&sd=true
 
+Color:
+#000000
+#051C3B
+#1E3D5A
+#80A4BE
+#E5EFEE
+
+
 
