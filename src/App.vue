@@ -1,21 +1,24 @@
 <template>
   <div>
-    <SneakersCards />
+    <NavBar />
+    <router-view />
   </div>
 </template>
 
 <script>
-import SneakersCards from './components/SneakersCards.vue'
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    SneakersCards
+    NavBar
   }
 }
 </script>
 
 <style>
+@import url("./css/style.css");
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

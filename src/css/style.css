@@ -1,0 +1,82 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.sneakers-card {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 4vh;
+}
+
+/* body {
+   background-color: navy;
+} */
+
+figure {
+   width: 26%;
+   padding: 1%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 2vh;
+   align-items: center;
+   background-color: whitesmoke;
+}
+
+figure:hover {
+   cursor: pointer;
+   scale: 1.04;
+}
+
+figcaption {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 1.5vh;
+}
+
+figcaption > p {
+   font-size: 1.2rem;
+}
+
+img {
+   width: 100%;
+   height: 30vh;
+   border: none;
+   outline: none;
+}
+
+.addToCart {
+   outline: none;
+   width: 30%;
+   height: 5vh;
+   cursor: pointer;
+   background-color: darkblue;
+   color: whitesmoke;
+   border-radius: 15px;
+   border: none;
+}
+
+.addToCart:hover {
+   background-color: blue;
+}
+
+.view-cart {
+   padding: 1vh;
+   text-decoration: none;
+   background-color: darkblue;
+   color: whitesmoke;
+   border-radius: 15px;
+   border: none;
+}
+
+.view-cart:hover {
+   background-color: blue;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   row-gap: 7vh;
+}

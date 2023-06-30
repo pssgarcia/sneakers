@@ -1,23 +1,33 @@
 <template>
-   <div>
-      <figure v-for="(sneaker, index) in sneakers" :key="sneaker.sneakerId">
-         <img :src="getImageSrc(sneaker, index)" alt="{{sneaker.sneakerId}}">
-         <figcaption>
-            <h3>{{sneaker.sneakerName}}</h3>
-            <h4>{{sneaker.brand}}</h4>
-            <p>{{sneaker.price}}</p>
-         </figcaption>
-      </figure>
+   <div class="container">
+      <div class="cart-reference">
+          {{ shoppingCart.length }} items in Cart
+      </div>
+      <router-link :to="{ name: sneakersPage, params: { sneakerId: sneaker.sneakerId } }" class="sneakers-card">
+         <figure v-for="(sneaker, index) in propsSneakers" :key="sneaker.sneakerId">
+            <img :src="getImageSrc(sneaker, index)" alt="{sneaker.sneakerId}">
+            <figcaption>
+               <h3>{{sneaker.sneakerName}}</h3>
+               <h4>{{sneaker.brand}}</h4>
+               <p>{{sneaker.price}}</p>
+               <button class="addToCart" @click="addToCart(sneaker)">Add to Cart</button>
+            </figcaption>
+         </figure>
+      </router-link>
    </div>
 </template>
 
 <script>
+import VueCookies from "vue-cookies";
+
 export default {
    name: "App",
+   props: {
+      propsSneakers: []
+   },
    data() {
       return {
-         sneakers: [],
-         sneakersApi: "http://localhost/sneakers/rest/api/V1/sneaker.php",
+         shoppingCart: [],
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -41,26 +51,25 @@ export default {
             "https://tinyurl.com/twentieth-sneaker"
          ]
       }
-      
    },
    methods: {
-      async getSneakers() {
-         try {
-            let response = await fetch(this.sneakersApi);
-            this.sneakers = await response.json();
-         } catch(error) {
-            console.log(error);
-         }
-      },
       getImageSrc(sneaker, index) {
          if (index < 20) {
             return this.sneakersImages[index];
          }
          return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLt1RTJ6HYQwrPK1FUK2sO0v1UruiJdLU27Q&usqp=CAU';
+      },
+       addToCart(sneaker) {
+         if(VueCookies.isKey("cart")) {
+            this.shoppingCart = VueCookies.get("cart");
+            this.shoppingCart.push(sneaker);
+            VueCookies.set("cart", JSON.stringify(this.shoppingCart));
+         } else {
+            // console.log(this.getImageSrc(sneaker));
+            this.shoppingCart.push(sneaker);
+            VueCookies.set("cart", JSON.stringify(this.shoppingCart));
+         }
       }
-   },
-   created() {
-      this.getSneakers();
    }
 }
 </script>
