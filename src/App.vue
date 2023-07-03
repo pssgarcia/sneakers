@@ -1,16 +1,17 @@
 <template>
-    <LoginPage/>
+    <button> <router-link class="links" to="/login">Login Page</router-link> </button>
+    <button> <router-link class="links" to="/registration">Registration Page</router-link> </button>
     <router-view/>
 </template>
 
 <script>
-import LoginPage from "./components/LoginPage.vue";
+
 
 
 export default {
   name: 'App',
   components: {
-    LoginPage
+    
   },
     data(){
         return{

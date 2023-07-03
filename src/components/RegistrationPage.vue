@@ -27,7 +27,7 @@
                             <article class="passwords">
                                 <label for="password">Your Password</label>
                                 <input type="password" name="password" id="password" placeholder="Password">
-                                <input type="password" name="password" id="password" placeholder="Confirm your Password">
+                                <input type="password" name="password" id="password-2" placeholder="Confirm your Password">
                             </article>
                             <article>
                                 <label for="phonr">Your Phone</label>

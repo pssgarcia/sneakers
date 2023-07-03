@@ -23,6 +23,7 @@ switch($method){
                 $response->message = "Login success - PHP";
                 $response->sessionToken = session_id();
                 $response->session = $_SESSION;
+                
             }
         }
         echo json_encode($response);

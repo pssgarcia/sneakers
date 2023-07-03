@@ -1,10 +1,9 @@
 <template>
     <main>
         <section class="container">
-            <section class="left">
-                <section v-if="this.logged">
-                    <RegistrationPage/>
-                    <button @click="logout" type="submit" class="btn btn-warning">Log out</button>
+            <section class="left" >
+                <section v-if="logged">
+                    <ProfilePage/>
                 </section>
                 <section class="title" v-else>
                     <h1>Welcome Back</h1>
@@ -13,7 +12,7 @@
                         <router-link class="links" to="/registration">Sign Up Here</router-link>
                     </p>
                 </section>
-                <article class="content">
+                <article class="content" v-if="!logged">
                     <form @submit.prevent="login">
                         <section class="inputs">
                             <article>
@@ -38,12 +37,12 @@
 
 <script>
 import VueCookies from 'vue-cookies';
-import RegistrationPage from "./RegistrationPage.vue";
+import ProfilePage from './ProfilePage.vue';      
 
 export default {
     name: "LoginPage",
     components:{
-        RegistrationPage
+        ProfilePage
     },
     data(){
         return{
@@ -77,12 +76,6 @@ export default {
             this.logged = true;
 
             console.log(VueCookies.get("session"));
-        },
-        async logout(){
-            if (VueCookies.isKey("session")) {
-                VueCookies.remove("session");
-                this.logged = false;
-            }
         }
     },
     created(){
