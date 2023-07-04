@@ -79,6 +79,18 @@ nav
     border-radius: 20px;
     padding-right: 2vh;
   }
+  .fa-heart:hover{
+    transition: .4s;
+    color: red;
+  }
+  .fa-user:hover{
+    transition: .4s;
+    color: orange;
+  }
+  .fa-cart-shopping:hover{
+    transition: .4s;
+    color: greenyellow;
+  }
 /*===================
 Header
 ====================*/
@@ -142,6 +154,9 @@ Header
     .home-main img {
       width: 40vh;
     }
+/*===================
+Header
+====================*/
     .slide {
         padding: 5vh 0;
         display: flex;
@@ -156,6 +171,9 @@ Header
     font-size: 30px;
     color: #80A4BE;
   }
+/*===================
+trend new
+====================*/
   .trend,
   .new {
     width: 80%;
@@ -174,7 +192,8 @@ Header
     row-gap: 3vh;
   }
   .trend h2,
-  .new h2 {
+  .new h2
+  .fashion h2{
     padding-bottom: 5vh;
   }
   .trend figure,
@@ -191,6 +210,12 @@ Header
     display: flex;
     justify-content: space-between;
   }
+/*===================
+gallery
+====================*/
+  .fashion{
+    width: 90%;
+  }
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -198,8 +223,13 @@ Header
     column-gap: 1vh;
     row-gap: 1vh;
     width: 95%;
-    padding: 10vh 0;
   }
+  .gallery img{
+    width: 40vh;
+  }
+/*===================
+Header
+====================*/
   .about {
     width: 80%;
     padding-top: 10vh;
@@ -209,6 +239,14 @@ Header
     display: flex;
     -moz-column-gap: 8vh;
          column-gap: 8vh;
+  }
+  .about figcaption{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+  .about img{
+    width: 45vh;
   }
 /*===================
 Footer
@@ -263,4 +301,7 @@ Footer
   }
   footer .sns i {
     color: #1E3D5A;
+  }
+  footer h4{
+    font-size: 20px;
   }

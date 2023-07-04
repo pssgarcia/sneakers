@@ -1,14 +1,20 @@
 <template>
 
-  <NavComponent/>
-  <HeaderComponent/>
-  <FooterComponent/>
+    <NavComponent/>
+    <HeaderComponent/>
+    <main class="home-main">
+        <GalleryComponent/>
+    </main>
+    <FooterComponent/>
+    <router-view/>
+    <!-- <router-view/> -->
 
 </template>
 
 <script>
 import HeaderComponent from './components/HeaderComponent.vue'
 import NavComponent from './components/NavComponent.vue'
+import GalleryComponent from './components/GalleryComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 
 export default {
@@ -16,6 +22,7 @@ export default {
   components: {
     HeaderComponent,
     NavComponent,
+    GalleryComponent,
     FooterComponent
   }
 }

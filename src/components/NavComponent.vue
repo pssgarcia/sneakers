@@ -6,26 +6,40 @@
                 <h2>Street Kicks</h2>
             </a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sale</a></li>
-                <li><a href="#">New</a></li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/about">About</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/gallery">Gallery</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/contact">Contact</router-link>
+                </li>
             </ul>
             <article>
                 <form action="#">
-                    <input type="search" placeholder="Search">
+                    <input v-model="userInput" @keyup="getResults($event)" type="search" placeholder="Search">
                     <button type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
                 <a href="#">
-                   <i class="fa-solid fa-heart"></i>
+                    <router-link class="nav-link" to="/wishList">
+                    <i class="fa-solid fa-heart"></i>
+                    </router-link>
                 </a>
                 <a href="#">
+                    <router-link class="nav-link" to="/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    </router-link>
                 </a>
                 <a href="#">
+                    <router-link class="nav-link" to="/profile">
                     <i class="fa-solid fa-user"></i>
+                    </router-link>
                 </a>
             </article>
         </section>
@@ -33,11 +47,50 @@
 </template>
 
 <script>
-
+import {ref} from 'vue';
 export default{
-    name: 'NavComponent',
+  name: 'NavComponent',
+  data() {
+    return {
+      sneakers: [], // Initialize the sneakers array
+      sneakersApi: 'http://localhost/sneakers/rest/api/V1/sneaker.php',
+    };
+  },
+  methods: {
+    async getSneakers() {
+      try {
+        let response = await fetch(this.sneakersApi);
+        this.sneakers = await response.json();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    getResults() {
+      // Filter the sneakers based on the user input
+      this.result = this.sneakers.filter(item =>
+        item.sneaker.toLowerCase().includes(this.userInput.toLowerCase())
+      );
+    },
+  },
+  created() {
+    this.getSneakers();
+  },
+  setup() {
+    let userInput = ref('');
+    let result = ref([]);
 
+    return { userInput, result };
+  }
 }
+//     setup(){
+//         let userInput = ref('');
+//         let result = ref([]);
+//         const sneakers = ref([this.sneakersApi]);
+//         const getResults = () =>{
+//             result.value = sneakers.value.filter(item =>item.sneaker.toLowerCase().includes(userInput.value.toLowerCase()));
+//         }
+//         return {sneakers, result, getResults, userInput }
+//     }
 </script>
 
 

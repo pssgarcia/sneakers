@@ -15,8 +15,8 @@
 
 <script>
 export default {
-    name:"ContactForm",
-    
+    name:"ContactPage",
+
   data() {
     return {
       name: '',
