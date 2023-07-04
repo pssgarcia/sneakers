@@ -1,6 +1,6 @@
 <?php
 
-class UsersConverter {
+class UserConverter {
     public static function convertoStd($user){
         if( ! is_array($user)){
             $stdObject = new stdClass;
