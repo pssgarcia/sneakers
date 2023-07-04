@@ -25,5 +25,18 @@ class UserDAO {
 
         return self::$db->singleResult();
     }
+
+    public static function insertUsers(User $newUser) {
+        $sql = "INSERT INTO users (userFullName, userEmail, userPassword, userPhone, userAddress) VALUES (:userFullName, :userEmail, :userPassword, :userPhone, :userAddress)";
+        self::$db->query($sql);
+        self::$db->bind(":userFullName",$newUser->getUserFullName());
+        self::$db->bind(":userEmail",$newUser->getUserEmail());
+        self::$db->bind(":userPassword",$newUser->getUserPassword());
+        self::$db->bind(":userPhone",$newUser->getUserPhone());
+        self::$db->bind(":userAddress",$newUser->getUserAddress());
+
+        self::$db->execute();
+        return self::$db->lastInsertId();
+    }
 }
 ?>

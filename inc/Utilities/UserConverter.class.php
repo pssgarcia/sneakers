@@ -30,6 +30,34 @@ class UserConverter {
             return $stdObjectList; 
         }
     }
+
+    public static function convertToObj($stdObject){
+        if(!is_object($stdObject)) {
+            $newUser = new User();
+            $newUser->setUserFullName($stdObject->userFullName);
+            $newUser->setUserEmail($stdObject->userEmail);
+            $newUser->setUserPassword($stdObject->userPassword);
+            $newUser->setUserPhone($stdObject->userPhone);
+            $newUser->setUserAddress($stdObject->userAddress);
+
+            return $newUser;
+        }else{
+            $usersList = [];
+            foreach($stdObject as $newstdObject) {
+                $newUser = new User();
+                $newUser->setUserFullName($newstdObject->userFullName);
+                $newUser->setUserEmail($newstdObject->userEmail);
+                $newUser->setUserPassword($newstdObject->userPassword);
+                $newUser->setUserPhone($newstdObject->userPhone);
+                $newUser->setUserAddress($newstdObject->userAddress);
+                $usersList[] = $newUser;
+            }
+            return $usersList;
+        }
+    }
 }
+
+
+
 
 ?>

@@ -19,6 +19,14 @@ switch ($method){
         break;
     default:
         echo json_encode(array(UserDAO::getAllUsers()));
+    case "POST":
+        $data = json_decode(file_get_contents('php://input'));
+        UsersDAO::insertUsers(
+            UserConverter::convertToObj($data)
+        );
+        header("Location: http://localhost:8080");
+    break;
 }
+
 
 ?>
