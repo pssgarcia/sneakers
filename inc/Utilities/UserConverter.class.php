@@ -32,7 +32,7 @@ class UserConverter {
     }
 
     public static function convertToObj($stdObject){
-        if(!is_object($stdObject)) {
+        if( ! is_array($stdObject)) {
             $newUser = new User();
             $newUser->setUserFullName($stdObject->userFullName);
             $newUser->setUserEmail($stdObject->userEmail);
