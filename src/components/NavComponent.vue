@@ -13,7 +13,7 @@
                     <router-link class="nav-link" to="/about">About</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/gallery">Gallery</router-link>
+                    <router-link class="nav-link" to="/"></router-link>
                 </li>
                 <li class="nav-item">
                     <router-link class="nav-link" to="/contact">Contact</router-link>
@@ -47,11 +47,13 @@
 </template>
 
 <script>
-import {ref} from 'vue';
+// import {ref} from 'vue';
 export default{
   name: 'NavComponent',
   data() {
     return {
+      userInput: '',
+      result: '',
       sneakers: [], // Initialize the sneakers array
       sneakersApi: 'http://localhost/sneakers/rest/api/V1/sneaker.php',
     };
@@ -74,23 +76,8 @@ export default{
   },
   created() {
     this.getSneakers();
-  },
-  setup() {
-    let userInput = ref('');
-    let result = ref([]);
-
-    return { userInput, result };
   }
 }
-//     setup(){
-//         let userInput = ref('');
-//         let result = ref([]);
-//         const sneakers = ref([this.sneakersApi]);
-//         const getResults = () =>{
-//             result.value = sneakers.value.filter(item =>item.sneaker.toLowerCase().includes(userInput.value.toLowerCase()));
-//         }
-//         return {sneakers, result, getResults, userInput }
-//     }
 </script>
 
 

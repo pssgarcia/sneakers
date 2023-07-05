@@ -1,9 +1,9 @@
 <template>
-    <NavComponent/>
+
     <main class="home-main">
         <section class="about" id="about">
             <figure>
-                <img src="../assets/img/about-home.jpg" alt="about">
+                <img src="../../assets/img/about-home.jpg" alt="about">
                 <figcaption>
                     <h3>About Us</h3>
                     <p>
@@ -13,19 +13,11 @@
             </figure>
         </section>
     </main>
-    <FooterComponent/>
 </template>
 
 <script>
-import FooterComponent from '../FooterComponent.vue'
-import NavComponent from './../NavComponent.vue'
 export default{
     name: 'AboutPage',
-    components:{
-        NavComponent,
-        FooterComponent
-    }
-
 }
 </script>
 

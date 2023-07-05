@@ -3,14 +3,16 @@
         <section>
             <h2>Street Kicks</h2>
             <article>
-                <ul>
+                <ul class="link">
                     <h4>Brand</h4>
                     <li><a href="#">Yeezy</a></li>
                     <li><a href="#">Off-White</a></li>
                 </ul>
                 <ul>
                     <h4>Account</h4>
-                    <li><a href="#">My Account</a></li>
+                    <li>
+                        <router-link class="nav-link" to="/profile">My Account</router-link>
+                    </li>
                     <li><a href="#">Track My Order</a></li>
                 </ul>
                 <ul>
@@ -30,11 +32,11 @@
                         <i class="fa-brands fa-facebook-f"></i>
                     </li>
                 </ul>
-                 <ul>
+                 <ul class="footer-form">
                     <h4>Sign Up For News, Promotions</h4>
                     <form action="#">
                         <label for="">Email Address</label>
-                        <input type="text" name="email" id="email" placeholder="Email">
+                        <input v-model="email" type="text" name="email" id="email" placeholder="Email">
                     </form>
                 </ul>
             </article>

@@ -63,8 +63,13 @@ nav
     -moz-column-gap: 3vh;
          column-gap: 3vh;
   }
-  nav a {
+  nav a,
+  nav li {
     color:white;
+  }
+  nav li:hover{
+    border-bottom: 2px solid white;
+    transition: .6s;
   }
   nav article i{
     font-size: 20px;
@@ -155,7 +160,7 @@ Header
       width: 40vh;
     }
 /*===================
-Header
+
 ====================*/
     .slide {
         padding: 5vh 0;
@@ -215,6 +220,7 @@ gallery
 ====================*/
   .fashion{
     width: 90%;
+    padding: 10vh 0;
   }
   .gallery {
     display: flex;
@@ -228,7 +234,7 @@ gallery
     width: 40vh;
   }
 /*===================
-Header
+about
 ====================*/
   .about {
     width: 80%;
@@ -302,6 +308,67 @@ Footer
   footer .sns i {
     color: #1E3D5A;
   }
+  footer .sns i:hover{
+    color: #80A4BE;
+  }
+  footer .sns li:hover{
+    border: 2px solid #80A4BE;
+    color: #1E3D5A;
+  }
+  footer a:hover{
+    border-bottom:  1px solid white;
+  }
   footer h4{
     font-size: 20px;
   }
+  footer form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+  }
+  footer input{
+    padding: 2vh;
+  }
+/*===================
+contact
+====================*/
+.contact{
+  display: flex;
+  justify-content: center;
+  padding: 20vh 0;
+}
+.contact-form{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3vh;
+  align-items: center;
+}
+.contact aside{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact input{
+  padding: 2vh;
+}
+.contact button{
+  width: 50%;
+  padding: 2vh;
+  border: 2px solid #80A4BE;
+  background-color: #80A4BE;
+  color: #1E3D5A;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.contact button:hover{
+  background-color: transparent;
+  transition: .6s;
+}
+.contact textarea{
+  width: 100%;
+  height: 20vh;
+}
+.contact label{
+  font-size: 18px;
+}

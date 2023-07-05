@@ -1,19 +1,26 @@
 <template>
-    <form @submit="submitForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" v-model="name" required>
+    <section class="contact">
 
-        <label for="email">Mail</label>
-        <input type="email" id="email" v-model="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" v-model="message" required></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
+        <form class="contact-form" @submit="submitForm">
+            <aside>
+                <label for="name">Name:</label>
+                <input type="text" id="name" v-model="name" required>
+            </aside>
+            <aside>
+                <label for="email">Mail:</label>
+                <input type="email" id="email" v-model="email" required>
+            </aside>
+            <aside>
+                <label for="message">Message:</label>
+                <textarea id="message" v-model="message" required></textarea>
+            </aside>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </template>
 
 <script>
+
 export default {
     name:"ContactPage",
 
@@ -27,7 +34,6 @@ export default {
   methods: {
     submitForm(event) {
       event.preventDefault();
-      // フォームの送信処理をここに記述します
     }
   }
 };
