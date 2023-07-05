@@ -1,27 +1,27 @@
 <template>
     <main>
-        <section class="container">
+        <section v-if="logged">
+            <ProfilePage/>
+        </section>
+        <section class="container" v-else>
             <section class="left" >
-                <section v-if="logged">
-                    <ProfilePage/>
-                </section>
-                <section class="title" v-else>
+                <section class="title">
                     <h1>Welcome Back</h1>
                     <p>
                         Don't have an account yet? 
                         <router-link class="links" to="/registration">Sign Up Here</router-link>
                     </p>
                 </section>
-                <article class="content" v-if="!logged">
+                <article class="content">
                     <form @submit.prevent="login">
                         <section class="inputs">
                             <article>
-                                <label for="email">Your Email</label>
-                                <input type="email" name="email" id="email" placeholder="Email" v-model.lazy="email">
+                                <label for="userEmail">Your Email</label>
+                                <input type="email" name="userEmail" id="userEmail" placeholder="Email" v-model.lazy="userEmail">
                             </article>
                             <article>
-                                <label for="password">Your Password</label>
-                                <input type="password" name="password" id="password" placeholder="Password" v-model.lazy="password">
+                                <label for="userPassword">Your Password</label>
+                                <input type="password" name="userPassword" id="userPassword" placeholder="Password" v-model.lazy="userPassword">
                             </article>
                         </section>
                         <button type="submit">Login</button>
@@ -29,7 +29,7 @@
                 </article>
             </section>
             <section class="right">
-                <img src="./../assets/img_4.jpg" alt="img_4">
+                <img class="img_1" src="./../assets/img_4.jpg" alt="img_4">
             </section>
         </section>
     </main>
@@ -47,11 +47,12 @@ export default {
     data(){
         return{
             logged: false,
-            username: "",
-            password: "",
-            loginUrl: "http://localhost:80/sneakers/src/api/login.php",
-            serverUrl: "http://localhost:80/sneakers/src/api/server.php",
-            token: ""
+            userEmail: "",
+            userPassword: "",
+            loginUrl: "http://localhost:80/sneakers/api/login.php",
+            serverUrl: "http://localhost:80/sneakers/api/server.php",
+            token: "",
+            localUser: {}
         }
     },
     methods:{
@@ -60,25 +61,28 @@ export default {
                 await fetch(this.loginUrl,{
                     method: "POST",
                     body: JSON.stringify({
-                        username: this.username,
-                        password: this.password
+                        userEmail: this.userEmail,
+                        userPassword: this.userPassword
                     })
-                }).then((res) => res.json()
-                ).then((data) =>{
+                }).then((response) => response.json()
+                ).then((data) => {
                     if(data.success){
                         this.token = data.sessionToken;
+                        this.localUser = data.user;
                     }
                 });
             }catch(e){
                 console.error(e);
             }
-            VueCookies.set("session", this.token, "60d");
-            this.logged = true;
-
-            console.log(VueCookies.get("session"));
+            if (this.token) {
+                VueCookies.set("session", {"token": this.token, "user": this.localUser}, "60d");
+                this.logged = true;
+                console.log(this.token);
+            }
         }
     },
     created(){
+        // console.log(VueCookies.get("session"));
         if(VueCookies.isKey("session")){
             this.logged = true;
         }
@@ -185,7 +189,7 @@ button:hover{
     cursor: pointer;
 }
 
-img{
+.img_1{
     width: 100%;
     height: 100%;
     border-top-right-radius: 20px;

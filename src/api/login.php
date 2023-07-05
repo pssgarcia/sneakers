@@ -5,7 +5,8 @@ header("Access-Control-Allow-Methods: GET, POST");
 header("Content-type: application/json; charset=utf-8");
 
 $method = $_SERVER['REQUEST_METHOD'];
-
+echo "lucas";
+die();
 switch($method){
     case "POST":
         $data = json_decode(file_get_contents("php://input"));
@@ -14,9 +15,9 @@ switch($method){
         $response->message = "Login failed";
         $response->sessionToken = null;
         UserDAO::startDb();
-        $currentUser = UserDAO::getUserByUsername($data->userName);
+        $currentUser = UserDAO::getUserByEmail($data->userEmail);
         if (isset($currentUser)) {
-            if($data->$userName == $currentUser->getUserName()) && ($data->$userPassword == $currentUser->getPassword()){
+            if($data->$userEmail == $currentUser->getUserEmail()) && ($data->$userPassword == $currentUser->getPassword()){
                 session_start();
                 $_SESSION["userId"] = $currentUser->getId();
                 $response->success = true;
