@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+/*===================
+nav
+====================*/
+  nav {
+    padding: 3vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #051C3B;
+  }
+  nav img{
+    width: 10vh;
+  }
+  nav > section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
+  nav > section > a {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 1vh;
+         column-gap: 1vh;
+  }
+  nav h2 {
+    color:whitesmoke;
+    font-size: 38px;
+    text-shadow: 4px 5px 1px rgba(54, 119, 203, 0.45);
+  }
+  nav span {
+    color: #1E3D5A;
+  }
+  nav ul {
+    display: flex;
+    -moz-column-gap: 5vh;
+         column-gap: 5vh;
+    font-size: 20px;
+  }
+  nav article {
+    display: flex;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+  }
+  nav a,
+  nav li {
+    color:white;
+  }
+  nav li:hover{
+    border-bottom: 2px solid white;
+    transition: .6s;
+  }
+  nav article i{
+    font-size: 20px;
+  }
+  nav input,
+  nav button{
+    padding: 2%;
+    border: none;
+  }
+  nav form{
+    display: flex;
+    border-radius: 20px;
+    padding-right: 2vh;
+  }
+  .fa-heart:hover{
+    transition: .4s;
+    color: red;
+  }
+  .fa-user:hover{
+    transition: .4s;
+    color: orange;
+  }
+  .fa-cart-shopping:hover{
+    transition: .4s;
+    color: greenyellow;
+  }
+/*===================
+Header
+====================*/
+  header {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    header section {
+        position: relative;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+    }
+    header h1 {
+        font-size: 50px;
+        color: white;
+        padding-bottom: 2vh;
+    }
+    header p {
+        font-size: 30px;
+        color: white;
+        padding-bottom: 9vh;
+    }
+    header a {
+        background-color: white;
+        padding: 2%;
+        border-radius: 10px;
+        color: black;
+    }
+    header video {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+        position: absolute;
+    }
+    header .video-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+    }
+    header article {
+        position: relative;
+        top: 25%;
+        z-index: 3;
+        text-align: center;
+    }
+    .home-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: whitesmoke;
+    }
+    .home-main img {
+      width: 40vh;
+    }
+/*===================
+
+====================*/
+    .slide {
+        padding: 5vh 0;
+        display: flex;
+        -moz-column-gap: 3vh;
+        column-gap: 3vh;
+    align-items: center;
+  }
+  .slide img {
+    width: 35vh;
+  }
+  .slide i {
+    font-size: 30px;
+    color: #80A4BE;
+  }
+/*===================
+trend new
+====================*/
+  .trend,
+  .new {
+    width: 80%;
+    padding: 10vh 0;
+  }
+  .trend img,
+  .new img {
+    width: 100%;
+  }
+  .trend > section,
+  .new > section {
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+    row-gap: 3vh;
+  }
+  .trend h2,
+  .new h2
+  .fashion h2{
+    padding-bottom: 5vh;
+  }
+  .trend figure,
+  .new figure {
+    width: 20%;
+    padding: 2vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+  }
+  .trend figcaption,
+  .new figcaption {
+    display: flex;
+    justify-content: space-between;
+  }
+/*===================
+gallery
+====================*/
+  .fashion{
+    width: 90%;
+    padding: 10vh 0;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1vh;
+    row-gap: 1vh;
+    width: 95%;
+  }
+  .gallery img{
+    width: 40vh;
+  }
+/*===================
+about
+====================*/
+  .about {
+    width: 80%;
+    padding: 30vh 0;
+  }
+  .about figure {
+    display: flex;
+    -moz-column-gap: 8vh;
+         column-gap: 8vh;
+  }
+  .about figcaption{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+  .about img{
+    width: 45vh;
+  }
+/*===================
+Footer
+====================*/
+  footer {
+    color: white;
+    background-color: #051C3B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer > section {
+    width: 95%;
+  }
+  footer h2 {
+    padding: 2vh 0;
+  }
+  footer article {
+    display: flex;
+    -moz-column-gap: 20vh;
+         column-gap: 20vh;
+    padding-bottom: 5vh;
+  }
+  footer p {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #E5EFEE;
+    padding: 1%;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+  }
+  footer a {
+    color: #E5EFEE;
+  }
+  footer .sns {
+    flex-direction: row;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+    padding-right: 15vh;
+  }
+  footer .sns li {
+    width: 6vh;
+    height: 6vh;
+    background-color: #E5EFEE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .sns i {
+    color: #1E3D5A;
+  }
+  footer .sns i:hover{
+    color: #80A4BE;
+  }
+  footer .sns li:hover{
+    border: 2px solid #80A4BE;
+    color: #1E3D5A;
+  }
+  footer a:hover{
+    border-bottom:  1px solid white;
+  }
+  footer h4{
+    font-size: 20px;
+  }
+  footer form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+  }
+  footer input{
+    padding: 2vh;
+  }
+/*===================
+contact
+====================*/
+.contact{
+  display: flex;
+  justify-content: center;
+  padding: 30vh 0;
+}
+.contact-form{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3vh;
+  align-items: center;
+}
+.contact aside{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact input{
+  padding: 2vh;
+}
+.contact button{
+  width: 50%;
+  padding: 2vh;
+  border: 2px solid #80A4BE;
+  background-color: #80A4BE;
+  color: #1E3D5A;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.contact button:hover{
+  background-color: transparent;
+  transition: .6s;
+}
+.contact textarea{
+  width: 100%;
+  height: 20vh;
+}
+.contact label{
+  font-size: 18px;
+}
