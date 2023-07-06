@@ -3,7 +3,6 @@
 class User {
     private int $userId;
     private string $userFullName;
-    private string $userName;
     private string $userEmail;
     private string $userPassword;
     private string $userPhone;
@@ -23,10 +22,6 @@ class User {
 
     public function setUserFullName($userFullName){
         $this->userFullName = $userFullName;
-    }
-
-    public function getUserName(){
-        return $this->userName;
     }
 
     public function setUserName($userName){

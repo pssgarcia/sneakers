@@ -16,11 +16,11 @@ class UserDAO {
         return self::$db->resultSet();
     }
 
-    public static function getUserByUsername(){
-        $sql = 'SELECT * FROM users WHERE userName=:userName';
+    public static function getUserByEmail($userEmail){
+        $sql = 'SELECT * FROM users WHERE userEmail=:userEmail';
 
         self::$db->query($sql);
-        self::$db->bind(":userName",$userName);
+        self::$db->bind(":userEmail",$userEmail);
         self::$db->execute();
 
         return self::$db->singleResult();
