@@ -12,10 +12,10 @@
           <p>Release Date: {{ localSneaker.releaseDate }}</p>
           <p>Region: {{ localSneaker.buyerRegion }}</p>
           <section class="button-group-col">
-            <button class="addToCart" @click="addToCart(sneaker)">
+            <button class="addToCart" @click="addToCart()">
               Add to cart
             </button>
-            <button class="addToWishList" @click="addToWishList(sneaker)">
+            <button class="addToWishList" @click="addToWishList()">
               Favorite
             </button>
           </section>
@@ -79,23 +79,23 @@ export default {
         }
         return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLt1RTJ6HYQwrPK1FUK2sO0v1UruiJdLU27Q&usqp=CAU';
     },
-    addToCart(sneaker) {
+    addToCart() {
         if (VueCookies.isKey("cart")) {
           this.shoppingCart = VueCookies.get("cart");
-          this.shoppingCart.push(sneaker);
+          this.shoppingCart.push(this.localSneaker);
           VueCookies.set("cart", JSON.stringify(this.shoppingCart));
         } else {
-          this.shoppingCart.push(sneaker);
+          this.shoppingCart.push(this.localSneaker);
           VueCookies.set("cart", JSON.stringify(this.shoppingCart));
         }
     },
-    addToWishList(sneaker) {
+    addToWishList() {
         if (VueCookies.isKey("wlist")) {
           this.wishList = VueCookies.get("wlist");
-          this.wishList.push(sneaker);
+          this.wishList.push(this.localSneaker);
           VueCookies.set("wlist", JSON.stringify(this.wishList));
         } else {
-          this.wishList.push(sneaker);
+          this.wishList.push(this.localSneaker);
           VueCookies.set("wlist", JSON.stringify(this.wishList));
         }
     }

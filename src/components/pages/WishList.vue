@@ -23,9 +23,6 @@ import VueCookies from "vue-cookies";
 
 export default {
    name: 'WishList',
-   props: {
-      sneaker: {}
-   },
    data() {
       return {
          localList: [],

@@ -7,16 +7,37 @@
          </div>
          <button @click="clearCart">Clear cart</button>
       </aside>
-      <section class="sneakers-card">
-         <figure v-for="(sneaker, index) in localCart" :key="sneaker.sneakerId">
-            <img :src="getImageSrc(sneaker, index)" :alt="sneaker.sneakerId">
-            <figcaption>
-               <h3>{{sneaker.sneakerName}}</h3>
-               <h4>{{sneaker.brand}}</h4>
-               <p>{{sneaker.price}}</p>
-               <button class="removeFromCart" @click="removeFromCart(index)">Remove from cart</button>
-            </figcaption>
-         </figure> 
+      <section class="order-container" v-if="localCart.length > 0">
+         <section class="sneaker-cart" v-show="true">
+            <figure v-for="(sneaker, index) in localCart" :key="sneaker.sneakerId">
+               <img :src="getImageSrc(sneaker, index)" :alt="sneaker.sneakerId">
+               <figcaption>
+                  <h3>{{sneaker.sneakerName}}</h3>
+                  <h4>{{sneaker.brand}}</h4>
+                  <p>{{sneaker.price}}</p>
+                  <aside class="button-group">
+                     <button class="removeFromCart" @click="removeFromCart(index)">
+                        <i class="fa-solid fa-trash-can" style="color: #21252b;"></i>
+                     </button>
+                     <button class="addToWishList" @click="addToWishList(sneaker)">
+                        <i class="fa-solid fa-heart"></i>
+                     </button>
+                  </aside>
+               </figcaption>
+            </figure> 
+         </section>
+         <article class="order-summary">
+            <h2>Order Summary</h2>
+            <aside>
+               <p>Subtotal <span>${{ orderTotal }}</span></p>
+               <p>Estimated Delivery <span>—</span></p>
+               <p>Taxes <span>—</span></p>
+            </aside>
+            <h3>Total <span>${{ orderTotal }}</span></h3>
+            <button>
+               Checkout
+            </button>
+         </article>
       </section>
    </article>
 </template>
@@ -32,6 +53,7 @@ export default {
    data() {
       return {
          localCart: [],
+         wishList: [],
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -56,7 +78,19 @@ export default {
          ]
       }
    },
+   computed: {
+      orderTotal() {
+      const total = this.localCart.reduce((acc, sneaker) => {
+        const price = parseFloat(sneaker.price.replace(/[^0-9.-]+/g, ''));
+        return acc + price;
+      }, 0);
+      return total;
+    }
+   },
    methods: {
+      // orderTotal() {
+      //    return this.localCart.reduce((total, sneaker) => total + parseFloat(sneaker.price), 0);
+      // },
       removeFromCart(index) {
          if(VueCookies.isKey("cart")){
             this.localCart.splice(index, 1);
@@ -72,6 +106,16 @@ export default {
             VueCookies.remove("cart");
          }
       },
+      addToWishList(sneaker) {
+         if (VueCookies.isKey("wlist")) {
+            this.wishList = VueCookies.get("wlist");
+            this.wishList.push(sneaker);
+            VueCookies.set("wlist", JSON.stringify(this.wishList));
+         } else {
+            this.wishList.push(sneaker);
+            VueCookies.set("wlist", JSON.stringify(this.wishList));
+         }
+      },
       getImageSrc(sneaker, index) {
          if (index < this.sneakersImages.length) {
             return this.sneakersImages[index];
@@ -82,7 +126,7 @@ export default {
    created(){
       if(VueCookies.isKey("cart")) {
          this.localCart = VueCookies.get("cart");
-      } 
+      }
    }
 }
 </script>

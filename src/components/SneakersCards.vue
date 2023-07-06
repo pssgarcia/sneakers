@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <div class="message alert alert-success" v-if="addToCartMessage">{{ addToCartMessage }}</div>
     <div class="cart-reference">
       {{ shoppingCart.length }} items in Cart
     </div>
@@ -12,14 +13,14 @@
             </router-link>
             <h4>{{ sneaker.brand }}</h4>
             <p>{{ sneaker.price }}</p>
-            <div class="button-group">
+            <aside class="button-group">
                <button class="addToCart" @click="addToCart(sneaker)">
                   <i class="fa-solid fa-cart-shopping"></i>
                </button>
                <button class="addToWishList" @click="addToWishList(sneaker)">
                   <i class="fa-solid fa-heart"></i>
                </button>
-            </div>
+            </aside>
          </figcaption>
       </figure>
     </section>
@@ -39,6 +40,7 @@ export default {
       return {
          shoppingCart: [],
          wishList: [],
+         addToCartMessage: '',
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -79,6 +81,8 @@ export default {
             this.shoppingCart.push(sneaker);
             VueCookies.set("cart", JSON.stringify(this.shoppingCart));
          }
+
+         this.addToCartMessage = `Item successfully added to the cart.`;
       },
       addToWishList(sneaker) {
          if (VueCookies.isKey("wlist")) {
