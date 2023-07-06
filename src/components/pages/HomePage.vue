@@ -1,12 +1,15 @@
 <template>
+   <HeaderComponent/>
+   <GalleryComponent/>
    <main>
-      <!-- <router-view /> -->
       <SneakersCards :sneakerProps="sneakers"/>
    </main>
 </template>
 
 <script>
 import SneakersCards from '../SneakersCards.vue';
+import HeaderComponent from '../HeaderComponent.vue'
+import GalleryComponent from '../GalleryComponent.vue'
 
 export default {
    name: "HomePage",
@@ -32,5 +35,4 @@ export default {
    created() {
       this.getSneakers();
    }
-}
 </script>

@@ -1,17 +1,23 @@
 <template>
   <div>
     <NavBar />
+    <NavComponent/>
     <router-view />
+    <FooterComponent/>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
+import NavComponent from './components/NavComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
     NavBar
+    NavComponent,
+    FooterComponent
   }
 }
 </script>
@@ -19,7 +25,6 @@ export default {
 <style>
 @import url("./css/style.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-/* @import url("https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"); */
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
