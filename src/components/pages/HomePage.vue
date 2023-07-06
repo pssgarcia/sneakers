@@ -14,7 +14,9 @@ import GalleryComponent from '../GalleryComponent.vue'
 export default {
    name: "HomePage",
    components: {
-      SneakersCards
+      SneakersCards,
+      HeaderComponent,
+      GalleryComponent
    },
    data() {
       return {
@@ -35,4 +37,5 @@ export default {
    created() {
       this.getSneakers();
    }
+}
 </script>
