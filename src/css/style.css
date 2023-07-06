@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+  --oxfordBlue: #051C3B;
+  --indigoDye: #1E3D5A;
+  --lightBlue: #80A4BE;
+  --azure: #E5EFEE;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+a {
+   text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  padding-top: 5vh;
+}
+/*===================
+nav
+====================*/
+  nav {
+    padding: 3vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--oxfordBlue);
+  }
+  nav img{
+    width: 10vh;
+  }
+  nav > section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+  }
+  nav > section > a {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 1vh;
+         column-gap: 1vh;
+  }
+  nav h2 {
+    color:whitesmoke;
+    font-size: 38px;
+    text-shadow: 4px 5px 1px rgba(54, 119, 203, 0.45);
+  }
+  nav span {
+    color: var(--indigoDye);
+  }
+  nav ul {
+    display: flex;
+    -moz-column-gap: 5vh;
+         column-gap: 5vh;
+    font-size: 20px;
+  }
+  nav article {
+    display: flex;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+  }
+  nav a,
+  nav li {
+    color:white;
+  }
+  nav li:hover{
+    border-bottom: 2px solid white;
+    transition: .6s;
+  }
+  nav article i{
+    font-size: 20px;
+  }
+  nav input,
+  nav button{
+    padding: 2%;
+    border: none;
+  }
+  nav form{
+    display: flex;
+    border-radius: 20px;
+    padding-right: 2vh;
+  }
+  .fa-heart:hover{
+    transition: .4s;
+    color: red;
+  }
+  .fa-user:hover{
+    transition: .4s;
+    color: var(--lightBlue);
+  }
+  .fa-cart-shopping:hover{
+    transition: .4s;
+    color: var(--lightBlue);
+  }
+/*===================
+Header
+====================*/
+  header {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    header section {
+        position: relative;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+    }
+    header h1 {
+        font-size: 50px;
+        color: white;
+        padding-bottom: 2vh;
+    }
+    header p {
+        font-size: 30px;
+        color: white;
+        padding-bottom: 9vh;
+    }
+    header a {
+        background-color: white;
+        padding: 2%;
+        border-radius: 10px;
+        color: black;
+    }
+    header video {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+        position: absolute;
+    }
+    header .video-bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+    }
+    header article {
+        position: relative;
+        top: 25%;
+        z-index: 3;
+        text-align: center;
+    }
+/*===================
+
+====================*/
+    .slide {
+        padding: 5vh 0;
+        display: flex;
+        -moz-column-gap: 3vh;
+        column-gap: 3vh;
+        align-items: center;
+  }
+  .slide img {
+    width: 35vh;
+  }
+  .slide i {
+    font-size: 30px;
+    color: var(--lightBlue);
+  }
+/*===================
+trend new
+====================*/
+  .fashion h2{
+    padding-bottom: 5vh;
+    font-size: 2rem;
+  }
+/*===================
+gallery
+====================*/
+  .fashion{
+    padding: 10vh 0;
+    background-color: var(--azure);
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5vh;
+    width: 100%;
+  }
+  .gallery img{
+    width: 45vh;
+  }
+/*===================
+about
+====================*/
+  .about {
+    width: 80%;
+    padding: 30vh 0;
+  }
+  .about figure {
+    display: flex;
+    -moz-column-gap: 8vh;
+         column-gap: 8vh;
+  }
+  .about figcaption{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+  }
+  .about img{
+    width: 45vh;
+  }
+
+nav > ul {
+   display: flex;
+   justify-content: center;
+   column-gap: 4vh;
+}
+
+.sneakers-card {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 4vh;
+   width: 100%;
+   padding-bottom: 5vh;
+}
+
+.sneakers-card > figure {
+   width: 28%;
+   padding: 1%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 3vh;
+   background-color: whitesmoke;
+   transition: .4s;
+   > img {
+      width: 100%;
+      height: 30vh;
+      border: none;
+      outline: none;
+   }
+}
+
+.sneakers-card > figure:hover {
+   scale: 1.04;
+}
+
+.sneakers-card a {
+   color: blue
+}
+
+.sneakers-card a:hover {
+   color: lightblue
+}
+
+figcaption {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 1.5vh;
+}
+
+figcaption > p {
+   font-size: 1.2rem;
+}
+
+.button-group {
+   display: flex;
+   justify-content: center;
+   column-gap: 3vh;
+   width: 100%;
+}
+
+.lists {
+   display: flex;
+   flex-direction: column;
+   row-gap: 5vh;
+   padding-top: 1.4rem;
+   padding-bottom: 2rem;
+}
+
+.lists > aside {
+   display: flex;
+   justify-content: center;
+   column-gap: 3vh;
+}
+
+.order-container {
+   display: flex;
+}
+
+.order-summary {
+   display: flex;
+   flex-direction: column;
+   row-gap: 4vh;
+   text-align: left;
+   > aside {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2vh;
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 3vh;
+      > p {
+         display: flex;
+         justify-content: space-between;
+         width: 300px;
+      }
+   }
+   > h3 {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 3vh;
+      display: flex;
+      justify-content: space-between;
+   }
+   > button {
+      color: white;
+      border: none;
+      outline: none;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      background-color: darkblue;
+      padding: 1.2rem;
+      &:hover {
+         background-color: blue;
+         cursor: pointer;
+      }
+   }
+}
+
+.sneaker-cart {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 5vh;
+   > figure {
+      border: 1px solid black;
+      /* border-bottom: 1px solid black; */
+      display: flex; 
+      width: 80%;
+      /* padding-bottom: 3%; */
+      column-gap: 4vh;
+      justify-content: center;
+      > img {
+         width: 38%;
+         height: 35vh;
+      }
+      > figcaption {
+         row-gap: 3vh;
+         padding: 3%;
+         justify-content: center;
+      }
+   }
+}
+
+.removeFromCart {
+   outline: none;
+   cursor: pointer;
+   border: none;
+}
+
+.addToCart, .addToWishList {
+   outline: none;
+   cursor: pointer;
+   color: darkblue;
+   border-radius: 15px;
+   border: none;
+}
+
+.addToCart > i, .addToWishList > i, .removeFromCart > i {
+   font-size: 1.5rem;
+}
+
+.addToCart > i:hover, .addToWishList > i:hover, .removeFromCart > i:hover {
+   scale: 1.2;
+}
+
+.view-cart {
+   padding: 1vh;
+   text-decoration: none;
+   background-color: darkblue;
+   color: whitesmoke;
+   border-radius: 15px;
+   border: none;
+}
+
+.view-cart:hover {
+   background-color: blue;
+}
+
+.detail-container {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+}
+
+.sneaker-detail {
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   column-gap: 17vh;
+   > img {
+      width: 60%;
+      height: 80vh;
+      border: 2px solid black;
+   }
+   > figcaption {
+      display: flex;
+      flex-direction: column;
+      row-gap: 6.5vh;
+      > aside {
+         display: flex;
+         flex-direction: column;
+         row-gap: 2vh;
+         font-size: 20px;
+      }
+   }
+
+   .button-group-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2vh;
+      width: 100%;
+      > button {
+         color: white;
+         font-size: 1.1rem;
+         border-radius: 50px;
+         background-color: darkblue;
+         padding: 1.2rem;
+         width: 75%;
+         &:hover {
+            background-color: blue;
+         }
+      }
+   }
+   
+}
+
+/*===================
+Footer
+====================*/
+  footer {
+    color: white;
+    background-color: var(--oxfordBlue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer > section {
+    width: 95%;
+  }
+  footer h2 {
+    padding: 2vh 0;
+  }
+  footer article {
+    display: flex;
+    -moz-column-gap: 20vh;
+         column-gap: 20vh;
+    padding-bottom: 5vh;
+    border-bottom: 1px solid var(--azure);
+    width: 100%;
+  }
+  footer p {
+    padding: 2%;
+    text-align: center;
+  }
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+  }
+  footer a {
+    color: var(--azure);
+  }
+  footer .sns {
+    flex-direction: row;
+    -moz-column-gap: 3vh;
+         column-gap: 3vh;
+    padding-right: 15vh;
+  }
+  footer .sns li {
+    width: 6vh;
+    height: 6vh;
+    background-color: var(--azure);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .sns i {
+    color: var(--indigoDye);
+  }
+  footer .sns i:hover{
+    color: var(--lightBlue);
+  }
+  footer .sns li:hover{
+    border: 2px solid var(--lightBlue);
+    color: var(--indigoDye);
+  }
+  footer a:hover{
+    border-bottom:  1px solid white;
+  }
+  footer h4{
+    font-size: 20px;
+  }
+  footer form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+  }
+  footer input{
+    padding: 2vh;
+  }
+/*===================
+contact
+====================*/
+.contact{
+  display: flex;
+  justify-content: center;
+  padding: 30vh 0;
+}
+.contact-form{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3vh;
+  align-items: center;
+}
+.contact aside{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact input{
+  padding: 2vh;
+}
+.contact button{
+  width: 50%;
+  padding: 2vh;
+  border: 2px solid var(--lightBlue);
+  background-color: var(--lightBlue);
+  color: var(--indigoDye);
+  border-radius: 10px;
+  font-size: 20px;
+}
+.contact button:hover{
+  background-color: transparent;
+  transition: .6s;
+}
+.contact textarea{
+  width: 100%;
+  height: 20vh;
+}
+.contact label{
+  font-size: 18px;
+}
