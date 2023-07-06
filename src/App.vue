@@ -17,9 +17,5 @@ export default {
 </script>
 
 <style>
-  body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  @import url("./css/login_css.css");
 </style>
