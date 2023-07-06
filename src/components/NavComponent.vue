@@ -13,9 +13,6 @@
                     <router-link class="nav-link" to="/about">About</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/"></router-link>
-                </li>
-                <li class="nav-item">
                     <router-link class="nav-link" to="/contact">Contact</router-link>
                 </li>
             </ul>
@@ -47,7 +44,6 @@
 </template>
 
 <script>
-// import {ref} from 'vue';
 export default{
   name: 'NavComponent',
   data() {

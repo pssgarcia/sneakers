@@ -17,9 +17,13 @@
                 </ul>
                 <ul>
                     <h4>About us</h4>
-                    <li><a href="#">Our history</a></li>
-                    <li><a href="#">stores</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li>
+                         <router-link class="nav-link" to="/about">Our history</router-link>
+                    </li>
+                    <li><a href="#">Stores</a></li>
+                    <li>
+                         <router-link class="nav-link" to="/contact">Contact</router-link>
+                    </li>
                 </ul>
                 <ul class="sns">
                     <li>

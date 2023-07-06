@@ -19,22 +19,6 @@ const routes = [
         name: "ContactPage",
         component: ContactPage
     }
-
-    // {
-    //     path: "/wishList",
-    //     name: "wishListPage",
-    //     component: wishListPage
-    // },
-    // {
-    //     path: "/profile",
-    //     name: "profilePage",
-    //     component: profilePage
-    // },
-    // {
-    //     path: "/cart",
-    //     name: "cartPage",
-    //     component: cartPage
-    // }
 ];
 
 const router = createRouter({

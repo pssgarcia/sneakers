@@ -238,8 +238,7 @@ about
 ====================*/
   .about {
     width: 80%;
-    padding-top: 10vh;
-    padding-bottom: 20vh;
+    padding: 30vh 0;
   }
   .about figure {
     display: flex;
@@ -335,7 +334,7 @@ contact
 .contact{
   display: flex;
   justify-content: center;
-  padding: 20vh 0;
+  padding: 30vh 0;
 }
 .contact-form{
   width: 60%;
