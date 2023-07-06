@@ -5,8 +5,8 @@
             <article>
                 <ul class="link">
                     <h4>Brand</h4>
-                    <li><a href="#">Yeezy</a></li>
-                    <li><a href="#">Off-White</a></li>
+                    <li><a href="#sneakers">Yeezy</a></li>
+                    <li><a href="#sneakers">Off-White</a></li>
                 </ul>
                 <ul>
                     <h4>Account</h4>
@@ -45,7 +45,7 @@
                 </ul>
             </article>
         </section>
-        <p>copy right &copy; 2023 Street Kicks</p>
+        <p>Copyright &copy; 2023 Street Kicks</p>
     </footer>
 </template>
 

@@ -5,6 +5,13 @@
    padding: 0;
 }
 
+:root {
+  --oxfordBlue: #051C3B;
+  --indigoDye: #1E3D5A;
+  --lightBlue: #80A4BE;
+  --azure: #E5EFEE;
+}
+
 html {
    scroll-behavior: smooth;
 }
@@ -20,6 +27,10 @@ p {
 li {
   list-style-type: none;
 }
+
+main {
+  padding-top: 5vh;
+}
 /*===================
 nav
 ====================*/
@@ -28,7 +39,7 @@ nav
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #051C3B;
+    background-color: var(--oxfordBlue);
   }
   nav img{
     width: 10vh;
@@ -51,7 +62,7 @@ nav
     text-shadow: 4px 5px 1px rgba(54, 119, 203, 0.45);
   }
   nav span {
-    color: #1E3D5A;
+    color: var(--indigoDye);
   }
   nav ul {
     display: flex;
@@ -91,11 +102,11 @@ nav
   }
   .fa-user:hover{
     transition: .4s;
-    color: orange;
+    color: var(--lightBlue);
   }
   .fa-cart-shopping:hover{
     transition: .4s;
-    color: greenyellow;
+    color: var(--lightBlue);
   }
 /*===================
 Header
@@ -150,16 +161,6 @@ Header
         z-index: 3;
         text-align: center;
     }
-    .home-main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: whitesmoke;
-    }
-    .home-main img {
-      width: 40vh;
-    }
 /*===================
 
 ====================*/
@@ -168,71 +169,38 @@ Header
         display: flex;
         -moz-column-gap: 3vh;
         column-gap: 3vh;
-    align-items: center;
+        align-items: center;
   }
   .slide img {
     width: 35vh;
   }
   .slide i {
     font-size: 30px;
-    color: #80A4BE;
+    color: var(--lightBlue);
   }
 /*===================
 trend new
 ====================*/
-  .trend,
-  .new {
-    width: 80%;
-    padding: 10vh 0;
-  }
-  .trend img,
-  .new img {
-    width: 100%;
-  }
-  .trend > section,
-  .new > section {
-    display: flex;
-    flex-wrap: wrap;
-    -moz-column-gap: 3vh;
-         column-gap: 3vh;
-    row-gap: 3vh;
-  }
-  .trend h2,
-  .new h2
   .fashion h2{
     padding-bottom: 5vh;
-  }
-  .trend figure,
-  .new figure {
-    width: 20%;
-    padding: 2vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    row-gap: 3vh;
-  }
-  .trend figcaption,
-  .new figcaption {
-    display: flex;
-    justify-content: space-between;
+    font-size: 2rem;
   }
 /*===================
 gallery
 ====================*/
   .fashion{
-    width: 90%;
     padding: 10vh 0;
+    background-color: var(--azure);
   }
   .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 1vh;
-    row-gap: 1vh;
-    width: 95%;
+    gap: 2.5vh;
+    width: 100%;
   }
   .gallery img{
-    width: 40vh;
+    width: 45vh;
   }
 /*===================
 about
@@ -267,6 +235,7 @@ nav > ul {
    justify-content: center;
    gap: 4vh;
    width: 100%;
+   padding-bottom: 5vh;
 }
 
 .sneakers-card > figure {
@@ -320,6 +289,7 @@ figcaption > p {
    flex-direction: column;
    row-gap: 5vh;
    padding-top: 1.4rem;
+   padding-bottom: 2rem;
 }
 
 .lists > aside {
@@ -486,7 +456,7 @@ Footer
 ====================*/
   footer {
     color: white;
-    background-color: #051C3B;
+    background-color: var(--oxfordBlue);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -502,12 +472,12 @@ Footer
     -moz-column-gap: 20vh;
          column-gap: 20vh;
     padding-bottom: 5vh;
+    border-bottom: 1px solid var(--azure);
+    width: 100%;
   }
   footer p {
-    width: 100%;
+    padding: 2%;
     text-align: center;
-    border-top: 1px solid #E5EFEE;
-    padding: 1%;
   }
   footer ul {
     display: flex;
@@ -515,7 +485,7 @@ Footer
     row-gap: 1vh;
   }
   footer a {
-    color: #E5EFEE;
+    color: var(--azure);
   }
   footer .sns {
     flex-direction: row;
@@ -526,21 +496,21 @@ Footer
   footer .sns li {
     width: 6vh;
     height: 6vh;
-    background-color: #E5EFEE;
+    background-color: var(--azure);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   footer .sns i {
-    color: #1E3D5A;
+    color: var(--indigoDye);
   }
   footer .sns i:hover{
-    color: #80A4BE;
+    color: var(--lightBlue);
   }
   footer .sns li:hover{
-    border: 2px solid #80A4BE;
-    color: #1E3D5A;
+    border: 2px solid var(--lightBlue);
+    color: var(--indigoDye);
   }
   footer a:hover{
     border-bottom:  1px solid white;
@@ -582,9 +552,9 @@ contact
 .contact button{
   width: 50%;
   padding: 2vh;
-  border: 2px solid #80A4BE;
-  background-color: #80A4BE;
-  color: #1E3D5A;
+  border: 2px solid var(--lightBlue);
+  background-color: var(--lightBlue);
+  color: var(--indigoDye);
   border-radius: 10px;
   font-size: 20px;
 }

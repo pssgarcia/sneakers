@@ -18,26 +18,20 @@
             </ul>
             <article>
                 <form action="#">
-                    <input v-model="userInput" @keyup="getResults($event)" type="search" placeholder="Search">
+                    <input v-model="userInput" @input="searchSneaker($event)" type="search" placeholder="Search">
                     <button type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
-                <a href="#">
-                    <router-link class="nav-link" to="/wishList">
+                <router-link class="nav-link" to="/wishList">
                     <i class="fa-solid fa-heart"></i>
-                    </router-link>
-                </a>
-                <a href="#">
-                    <router-link class="nav-link" to="/cart">
+                </router-link>
+                <router-link class="nav-link" to="/cart">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    </router-link>
-                </a>
-                <a href="#">
-                    <router-link class="nav-link" to="/profile">
+                </router-link>
+                <router-link class="nav-link" to="/profile">
                     <i class="fa-solid fa-user"></i>
-                    </router-link>
-                </a>
+                </router-link>
             </article>
         </section>
     </nav>
@@ -49,7 +43,8 @@ export default{
   data() {
     return {
       userInput: '',
-      result: '',
+      typed: false,
+      result: [],
       sneakers: [], // Initialize the sneakers array
       sneakersApi: 'http://localhost/sneakers/rest/api/V1/sneaker.php',
     };
@@ -63,11 +58,16 @@ export default{
         console.log(error);
       }
     },
-    getResults() {
+    searchSneaker() {
+      if (this.userInput !== "") {
+        this.typed = true;
+      }
       // Filter the sneakers based on the user input
-      this.result = this.sneakers.filter(item =>
-        item.sneaker.toLowerCase().includes(this.userInput.toLowerCase())
+      this.result = this.sneakers.filter(
+        (sneaker => sneaker.sneakerName.toLowerCase().includes(this.userInput.toLowerCase()))
       );
+
+      return this.result;
     },
   },
   created() {

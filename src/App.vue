@@ -1,21 +1,17 @@
 <template>
-  <div>
-    <NavBar />
-    <NavComponent/>
-    <router-view />
-    <FooterComponent/>
-  </div>
+  <NavComponent/>
+  <router-view />   
+  <FooterComponent/>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
+
 import NavComponent from './components/NavComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    NavBar,
     NavComponent,
     FooterComponent
   }
@@ -32,6 +28,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>

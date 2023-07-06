@@ -8,7 +8,7 @@
             <article>
                 <h1>Nothing is better than our sneakers</h1>
                 <p>Great sneakers waiting for you</p>
-                <a href="#">Shop</a>
+                <a href="#sneakers">Shop</a>
             </article>
         </section>
     </header>

@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="message alert alert-success" v-if="addToCartMessage">{{ addToCartMessage }}</div>
-    <div class="cart-reference">
+    <!-- <div class="cart-reference">
       {{ shoppingCart.length }} items in Cart
-    </div>
-    <section class="sneakers-card">
+    </div> -->
+    <section id="sneakers" class="sneakers-card">
       <figure v-for="(sneaker, index) in sneakerProps" :key="sneaker.sneakerId">                                            
          <img :src="getImageSrc(sneaker, index)" :alt="sneaker.sneakerId">
          <figcaption>
