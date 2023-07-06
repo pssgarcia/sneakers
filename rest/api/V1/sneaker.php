@@ -17,6 +17,15 @@ switch ($method) {
    case "GET":
       echo json_encode(SneakerConverter::convertToStd(SneakerDAO::getAllSneakers()));
       break;
-   default: 
-      echo json_encode(array(SneakerDAO::getAllSneakers()));
+   case "POST":
+      $data = json_decode(file_get_contents("php://input"));
+      if (isset($data->requestedId)) {
+
+            echo json_encode(
+               SneakerConverter::convertToStd(
+                  SneakerDAO::getOneSneaker($data->requestedId)
+               )
+            );
+      }
+   break;
 }

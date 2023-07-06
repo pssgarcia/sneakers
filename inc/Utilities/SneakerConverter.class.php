@@ -14,7 +14,7 @@ class SneakerConverter {
 
             return $stdObject;
         }else{
-            $stdObjectLits = [];
+            $stdObjectList = [];
             foreach($sneaker as $newSneaker){
                $stdObject = new stdClass;
                $stdObject->sneakerId = $newSneaker->getSneakerId();
@@ -29,4 +29,21 @@ class SneakerConverter {
             return $stdObjectList;
         }
     }
+
+    // public static function convertToObject($stdObject) {
+    //     if( ! is_array($stdObject)) {
+    //         $shopCart = new ShopCart();
+    //         // $shopCart->setUserId();
+    //         return $shopCart;
+    //     } else {
+    //         $shopCartList = [];
+    //         foreach($stdObject as $newStdObject) {
+    //             $shopCart = new ShopCart();
+    //             // $shopCart->setUserId();
+    //             $shopCartList[] = $shopCart;
+    //         }
+    //         return $shopCartList;
+    //     }
+
+    // }
 }
