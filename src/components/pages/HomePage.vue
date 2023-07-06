@@ -1,6 +1,7 @@
 <template>
    <main>
-      <SneakersCards :propsSneakers="sneakers"/>
+      <!-- <router-view /> -->
+      <SneakersCards :sneakerProps="sneakers"/>
    </main>
 </template>
 
@@ -21,7 +22,7 @@ export default {
    methods: {
       async getSneakers() {
          try {
-            let response = await fetch(this.sneakersApi);
+            const response = await fetch(this.sneakersApi);
             this.sneakers = await response.json();
          } catch(error) {
             console.log(error);

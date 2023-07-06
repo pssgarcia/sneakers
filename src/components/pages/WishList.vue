@@ -1,37 +1,34 @@
 <template>
-   <article class="lists">
-      <h2>Your Cart</h2>
+    <article class="lists">
       <aside>
-         <div class="cart-reference">
-            {{ localCart.length }}  items in cart
-         </div>
-         <button @click="clearCart">Clear cart</button>
+         <h2>Your Wish List</h2>
+         <button @click="clearList">Clear List</button>
       </aside>
       <section class="sneakers-card">
-         <figure v-for="(sneaker, index) in localCart" :key="sneaker.sneakerId">
+         <figure v-for="(sneaker, index) in localList" :key="sneaker.sneakerId">
             <img :src="getImageSrc(sneaker, index)" :alt="sneaker.sneakerId">
             <figcaption>
                <h3>{{sneaker.sneakerName}}</h3>
                <h4>{{sneaker.brand}}</h4>
                <p>{{sneaker.price}}</p>
-               <button class="removeFromCart" @click="removeFromCart(index)">Remove from cart</button>
+               <button class="removeFromList" @click="removeFromList(sneaker)">Remove from list</button>
             </figcaption>
          </figure> 
       </section>
-   </article>
+    </article>
 </template>
 
 <script>
-import VueCookies from 'vue-cookies';
+import VueCookies from "vue-cookies";
 
 export default {
-   name: "ShoppingCart",
+   name: 'WishList',
    props: {
       sneaker: {}
    },
    data() {
       return {
-         localCart: [],
+         localList: [],
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -56,32 +53,32 @@ export default {
          ]
       }
    },
-   methods: {
-      removeFromCart(index) {
-         if(VueCookies.isKey("cart")){
-            this.localCart.splice(index, 1);
-            VueCookies.set("cart", this.localCart);
-            if(this.localCart.length === 0) {
-               VueCookies.remove("cart");
+    methods: {
+      removeFromList(sneaker) {
+         if(VueCookies.isKey("wlist")){
+            this.localList.splice(sneaker, 1);
+            VueCookies.set("wlist", this.localList);
+            if(this.localList.length === 0) {
+               VueCookies.remove("wlist");
             }
          }
       },
-      clearCart() {
-         if(VueCookies.isKey("cart")){
-            this.localCart.splice(0, this.localCart.length);
-            VueCookies.remove("cart");
+      clearList() {
+         if(VueCookies.isKey("wlist")){
+            this.localList.splice(0, this.localList.length);
+            VueCookies.remove("wlist");
          }
       },
       getImageSrc(sneaker, index) {
-         if (index < this.sneakersImages.length) {
-            return this.sneakersImages[index];
-         }
-         return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLt1RTJ6HYQwrPK1FUK2sO0v1UruiJdLU27Q&usqp=CAU';
+      if (index < 20) {
+         return this.sneakersImages[index];
+      }
+      return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLt1RTJ6HYQwrPK1FUK2sO0v1UruiJdLU27Q&usqp=CAU';
       }
    },
    created(){
-      if(VueCookies.isKey("cart")) {
-         this.localCart = VueCookies.get("cart");
+      if(VueCookies.isKey("wlist")) {
+         this.localList = VueCookies.get("wlist");
       } 
    }
 }

@@ -1,33 +1,44 @@
 <template>
-   <div class="container">
-      <div class="cart-reference">
-          {{ shoppingCart.length }} items in Cart
-      </div>
-      <router-link :to="{ name: sneakersPage, params: { sneakerId: sneaker.sneakerId } }" class="sneakers-card">
-         <figure v-for="(sneaker, index) in propsSneakers" :key="sneaker.sneakerId">
-            <img :src="getImageSrc(sneaker, index)" alt="{sneaker.sneakerId}">
-            <figcaption>
-               <h3>{{sneaker.sneakerName}}</h3>
-               <h4>{{sneaker.brand}}</h4>
-               <p>{{sneaker.price}}</p>
-               <button class="addToCart" @click="addToCart(sneaker)">Add to Cart</button>
-            </figcaption>
-         </figure>
-      </router-link>
-   </div>
+  <div class="container">
+    <div class="cart-reference">
+      {{ shoppingCart.length }} items in Cart
+    </div>
+    <section class="sneakers-card">
+      <figure v-for="(sneaker, index) in sneakerProps" :key="sneaker.sneakerId">                                            
+         <img :src="getImageSrc(sneaker, index)" :alt="sneaker.sneakerId">
+         <figcaption>
+            <router-link :to="{ name: 'SneakersPage', params: { sneakerId: sneaker.sneakerId } }">
+               <h3>{{ sneaker.sneakerName }}</h3>
+            </router-link>
+            <h4>{{ sneaker.brand }}</h4>
+            <p>{{ sneaker.price }}</p>
+            <div class="button-group">
+               <button class="addToCart" @click="addToCart(sneaker)">
+                  <i class="fa-solid fa-cart-shopping"></i>
+               </button>
+               <button class="addToWishList" @click="addToWishList(sneaker)">
+                  <i class="fa-solid fa-heart"></i>
+               </button>
+            </div>
+         </figcaption>
+      </figure>
+    </section>
+  </div>
 </template>
+
 
 <script>
 import VueCookies from "vue-cookies";
 
 export default {
-   name: "App",
+   name: "SneakersCards",
    props: {
-      propsSneakers: []
+      sneakerProps: []
    },
    data() {
       return {
          shoppingCart: [],
+         wishList: [],
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -54,20 +65,29 @@ export default {
    },
    methods: {
       getImageSrc(sneaker, index) {
-         if (index < 20) {
+         if (index < this.sneakersImages.length) {
             return this.sneakersImages[index];
          }
          return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLt1RTJ6HYQwrPK1FUK2sO0v1UruiJdLU27Q&usqp=CAU';
       },
-       addToCart(sneaker) {
-         if(VueCookies.isKey("cart")) {
+      addToCart(sneaker) {
+         if (VueCookies.isKey("cart")) {
             this.shoppingCart = VueCookies.get("cart");
             this.shoppingCart.push(sneaker);
             VueCookies.set("cart", JSON.stringify(this.shoppingCart));
          } else {
-            // console.log(this.getImageSrc(sneaker));
             this.shoppingCart.push(sneaker);
             VueCookies.set("cart", JSON.stringify(this.shoppingCart));
+         }
+      },
+      addToWishList(sneaker) {
+         if (VueCookies.isKey("wlist")) {
+            this.wishList = VueCookies.get("wlist");
+            this.wishList.push(sneaker);
+            VueCookies.set("wlist", JSON.stringify(this.wishList));
+         } else {
+            this.wishList.push(sneaker);
+            VueCookies.set("wlist", JSON.stringify(this.wishList));
          }
       }
    }

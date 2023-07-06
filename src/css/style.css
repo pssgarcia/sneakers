@@ -3,31 +3,51 @@
    padding: 0;
 }
 
+html {
+   scroll-behavior: smooth;
+}
+
+a {
+   text-decoration: none;
+}
+
+nav > ul {
+   display: flex;
+   justify-content: center;
+   column-gap: 4vh;
+}
+
 .sneakers-card {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    gap: 4vh;
+   width: 100%;
 }
 
-/* body {
-   background-color: navy;
-} */
-
-figure {
-   width: 26%;
+.sneakers-card > figure {
+   width: 28%;
    padding: 1%;
    display: flex;
    flex-direction: column;
    row-gap: 2vh;
    align-items: center;
    background-color: whitesmoke;
+   transition: .4s;
 }
 
-figure:hover {
-   cursor: pointer;
+.sneakers-card > figure:hover {
    scale: 1.04;
 }
+
+.sneakers-card a {
+   color: blue
+}
+
+.sneakers-card a:hover {
+   color: lightblue
+}
+
 
 figcaption {
    display: flex;
@@ -47,19 +67,40 @@ img {
    outline: none;
 }
 
-.addToCart {
+.button-group {
+   display: flex;
+   justify-content: center;
+   column-gap: 3vh;
+   width: 100%;
+}
+
+.lists {
+   display: flex;
+   flex-direction: column;
+   row-gap: 5vh;
+   padding-top: 1.4rem;
+}
+
+.lists > aside {
+   display: flex;
+   justify-content: center;
+   column-gap: 3vh;
+}
+
+.addToCart, .addToWishList {
    outline: none;
-   width: 30%;
-   height: 5vh;
    cursor: pointer;
-   background-color: darkblue;
-   color: whitesmoke;
+   color: darkblue;
    border-radius: 15px;
    border: none;
 }
 
-.addToCart:hover {
-   background-color: blue;
+.addToCart > i, .addToWishList > i {
+   font-size: 1.5rem;
+}
+
+.addToCart > i:hover, .addToWishList > i:hover {
+   scale: 1.2;
 }
 
 .view-cart {
@@ -75,8 +116,52 @@ img {
    background-color: blue;
 }
 
-.container {
+.detail-container {
    display: flex;
    flex-direction: column;
-   row-gap: 7vh;
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+}
+
+.sneaker-detail {
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   column-gap: 17vh;
+   > img {
+      width: 60%;
+      height: 80vh;
+      border: 2px solid black;
+   }
+   > figcaption {
+      display: flex;
+      flex-direction: column;
+      row-gap: 6.5vh;
+      > aside {
+         display: flex;
+         flex-direction: column;
+         row-gap: 2vh;
+         font-size: 20px;
+      }
+   }
+
+   .button-group-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2vh;
+      width: 100%;
+      > button {
+         color: white;
+         font-size: 1.1rem;
+         border-radius: 50px;
+         background-color: darkblue;
+         padding: 1.2rem;
+         width: 75%;
+         &:hover {
+            background-color: blue;
+         }
+      }
+   }
 }
