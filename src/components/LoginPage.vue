@@ -1,7 +1,7 @@
 <template>
     <main>
         <section v-if="logged">
-            <ProfilePage/>
+            <ProfilePage :userProps="localUser"/>
         </section>
         <section class="container" v-else>
             <section class="left" >
@@ -69,6 +69,8 @@ export default {
                     if(data.success){
                         this.token = data.sessionToken;
                         this.localUser = data.user;
+                    }else{
+                        alert("Password and Email do not match")
                     }
                 });
             }catch(e){
@@ -77,7 +79,7 @@ export default {
             if (this.token) {
                 VueCookies.set("session", {"token": this.token, "user": this.localUser}, "60d");
                 this.logged = true;
-                console.log(this.token);
+                console.log(VueCookies.get("session"));
             }
         }
     },

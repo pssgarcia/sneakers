@@ -17,9 +17,9 @@ export default {
 </script>
 
 <style>
-body{
+  body{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 </style>

@@ -1,12 +1,32 @@
 <template>
     <div>
-        <h1>Hi You are logged in</h1>
+        <h1>Hi, {{ this.loggedInUser.userFullName}}, You are logged in</h1>
         <section>
-            <p>Full Name: </p>
-            <p>Email: </p>
-            <p>Phone: </p>
-            <p>Adress: </p>
+            <p>Full Name: {{ this.loggedInUser.userFullName }}</p>
+            <p>Email:  {{ this.loggedInUser.userEmail }}</p>
+            <p>Phone: {{ this.loggedInUser.userPhone }}</p>
+            <p>Address: {{ this.loggedInUser.userAddress }}</p>
         </section>
+
+        <main>
+            <table>
+                <tr>
+                    <th>
+                        
+                    </th>    
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+        </main>
+
         <button @click="logout" class="btn btn-warning">Log out</button>
     </div>
 </template>
@@ -26,7 +46,7 @@ export default {
             token: "",
             usersApi: "http://localhost:80/sneakers/rest/api/V1/users.php",
             users: [],
-            // loggedInUser: {}
+            loggedInUser: {}
         }
     },
     methods:{
@@ -42,21 +62,16 @@ export default {
             try{
                 let res = await fetch(this.usersApi);
                 this.users = await res.json();
-                const sessionEmail = VueCookies.get("session");
-                
-                // console.log("Users:", this.users);
-                // this.loggedInUser = this.users.find(user => user.userEmail === sessionEmail);
             }catch(e){
                 console.log(e);
             } 
         }
     },
     created(){
-        // console.log('created hook called');
-        this.getUsers();
         if(VueCookies.isKey("session")){
+            this.getUsers();
+            this.loggedInUser = VueCookies.get("session").user;
             this.logged = true;
-            // console.log('session hook');
         }
     }
 
