@@ -37,7 +37,7 @@
                     </tr>
                     </tbody>
                 </table>
-            <button @click="logout" class="btn btn-warning">Log out</button>
+            <button @click="logout" class="button">Log out</button>
             </section>
         </main>
 </template>

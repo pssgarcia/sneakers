@@ -3,10 +3,10 @@
         <section v-if="logged">
             <ProfilePage/>
         </section>
-        <section class="container" v-else>
+        <section class="container-login" v-else>
             <section class="left" >
-                <section class="title">
-                    <h1>Welcome Back</h1>
+                <section class="title-2">
+                    <h1 class="h1">Welcome Back</h1>
                     <p>
                         Don't have an account yet? 
                         <router-link class="links" to="/registration">Sign Up Here</router-link>
@@ -15,11 +15,11 @@
                 <article class="content">
                     <form @submit.prevent="login">
                         <section class="inputs">
-                            <article>
+                            <article class="article">
                                 <label for="userEmail">Your Email</label>
                                 <input type="email" name="userEmail" id="userEmail" placeholder="Email" v-model.lazy="userEmail">
                             </article>
-                            <article>
+                            <article class="article">
                                 <label for="userPassword">Your Password</label>
                                 <input type="password" name="userPassword" id="userPassword" placeholder="Password" v-model.lazy="userPassword">
                             </article>

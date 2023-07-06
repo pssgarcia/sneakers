@@ -3,14 +3,7 @@
     padding: 0;
 }
 
-
-body, main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container{
+.container-login{
     width: 100%;
     border: 1px solid black;
     border-radius: 20px;
@@ -31,40 +24,33 @@ body, main {
     row-gap: 5vh;
 }
 
-.title{
+.title-2{
     /* border: 1px solid black */
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
 }
 
-.title > h1{
+.title-2 > h1{
     text-align: center;
 }
 
-h1{
+.h1{
     font-size: 40px;
 }
 
-a{
-    text-decoration: none;
-}
 
-a:hover{
-    text-decoration: underline;
-}
-
-p{
+.title-2 p{
     font-size: 18px;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
     row-gap: 10vh;
 }
 
-article{
+.inputs article{
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
@@ -76,7 +62,7 @@ article{
     row-gap: 3vh;
 }
 
-input{
+.input{
     /* padding-left: 5%; */
     width: 48vh;
     height: 7vh;
@@ -84,7 +70,7 @@ input{
     border: 1px solid black;
 }
 
-input[placeholder]{
+.input[placeholder]{
     font-size: 16px;
     padding-left: 2vh;
 }
@@ -93,7 +79,7 @@ label{
     font-size: 19px;
 }
 
-button{
+.button{
     /* padding: 5%; */
     width: 50vh;
     height: 7vh;
@@ -103,7 +89,7 @@ button{
 
 }
 
-button:hover{
+.button:hover{
     cursor: pointer;
 }
 
@@ -112,13 +98,6 @@ button:hover{
     height: 100%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-}
-
-
-div{
-    display: flex;
-    flex-direction: column;
-    row-gap: 3vh;
 }
 
 .main{
@@ -184,7 +163,7 @@ table{
     row-gap: 5vh;
 }
 
-.title{
+.title-2{
     /* border: 1px solid black */
     display: flex;
     flex-direction: column;
@@ -192,33 +171,25 @@ table{
     text-align: center;
 }
 
-.title > h1{
+.title-2 > .h1{
     text-align: center;
 }
 
-h1{
+.h1{
     font-size: 40px;
 }
 
-a{
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
-p{
+.title-2 p{
     font-size: 18px;
 }
 
-form{
+.form{
     display: flex;
     flex-direction: column;
     row-gap: 6vh;
 }
 
-article{
+.article{
     display: flex;
     flex-direction: column;
     row-gap: 1vh;
@@ -230,7 +201,7 @@ article{
     row-gap: 3vh;
 }
 
-input{
+.input{
     /* padding-left: 5%; */
     width: 48vh;
     height: 7vh;
@@ -238,7 +209,7 @@ input{
     border: 1px solid black;
 }
 
-input[placeholder]{
+.input[placeholder]{
     font-size: 16px;
     padding-left: 2vh;
 }
