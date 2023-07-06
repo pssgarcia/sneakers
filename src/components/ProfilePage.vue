@@ -1,34 +1,45 @@
-<template>
-    <div>
-        <h1>Hi, {{ this.loggedInUser.userFullName}}, You are logged in</h1>
-        <section>
-            <p>Full Name: {{ this.loggedInUser.userFullName }}</p>
-            <p>Email:  {{ this.loggedInUser.userEmail }}</p>
-            <p>Phone: {{ this.loggedInUser.userPhone }}</p>
-            <p>Address: {{ this.loggedInUser.userAddress }}</p>
-        </section>
-
-        <main>
-            <table>
-                <tr>
-                    <th>
-                        
-                    </th>    
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-            </table>
+<template class="body">
+    <main class="main">
+        <section id="userInfo">
+            <table class="userInfo-Table">
+                <tbody>
+                    <tr>
+                        <th>
+                            Full Name:
+                        </th>
+                        <td>
+                            {{ this.loggedInUser.userFullName }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Email:
+                        </th>
+                        <td>
+                            {{ this.loggedInUser.userEmail }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Phone:
+                        </th>
+                        <td>
+                            {{ this.loggedInUser.userPhone }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Address:
+                        </th>
+                        <td>
+                            {{ this.loggedInUser.userAddress }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            <button @click="logout" class="btn btn-warning">Log out</button>
+            </section>
         </main>
-
-        <button @click="logout" class="btn btn-warning">Log out</button>
-    </div>
 </template>
 
 <script>
@@ -79,3 +90,53 @@ export default {
 
 
 </script>
+
+<style> 
+    div{
+        display: flex;
+        flex-direction: column;
+        row-gap: 3vh;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10vh;
+        width: 200vh;
+    }
+
+    #userInfo {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vh;
+        width: 100%;
+        padding-left: 2vh;
+    }
+
+    table{
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 40%;
+    }
+
+    .userInfo-Table th,
+    .userInfo-Table td {
+        padding: 4vh;
+        border: 1px solid #ddd;
+        text-align: justify;
+        font-size: 16px;
+    }
+
+
+    .userInfo-Table th {
+        color: whitesmoke;
+        background-color: #5584AC;
+        width: 30%;
+    }
+
+    .userInfo-Table td {
+        text-align: center;
+        color: lightslategrey;
+        width: 45%;
+    }
+</style>

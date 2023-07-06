@@ -1,7 +1,7 @@
 <template>
     <main>
         <section v-if="logged">
-            <ProfilePage :userProps="localUser"/>
+            <ProfilePage/>
         </section>
         <section class="container" v-else>
             <section class="left" >
