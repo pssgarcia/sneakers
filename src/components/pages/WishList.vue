@@ -2,7 +2,7 @@
     <article class="lists">
       <aside>
          <h2>Your Wish List</h2>
-         <button @click="clearList">Clear List</button>
+         <button class="btn-list" @click="clearList">Clear List</button>
       </aside>
       <section class="sneakers-card">
          <figure v-for="(sneaker, index) in localList" :key="sneaker.sneakerId">
@@ -11,7 +11,9 @@
                <h3>{{sneaker.sneakerName}}</h3>
                <h4>{{sneaker.brand}}</h4>
                <p>{{sneaker.price}}</p>
-               <button class="removeFromList" @click="removeFromList(sneaker)">Remove from list</button>
+               <button class="removeFromCart" @click="removeFromList(sneaker)">
+                  <i class="fa-solid fa-trash-can" style="color: #21252b;"></i>
+               </button>
             </figcaption>
          </figure> 
       </section>

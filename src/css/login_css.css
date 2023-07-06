@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+:root {
+    --oxfordBlue: #051C3B;
+    --indigoDye: #1E3D5A;
+    --lightBlue: #80A4BE;
+    --azure: #E5EFEE;
+  }
+
 .container-login{
     width: 100%;
     border: 1px solid black;
@@ -218,7 +225,7 @@ label{
     font-size: 19px;
 }
 
-button{
+.button{
     /* padding: 5%; */
     width: 50vh;
     height: 7vh;
@@ -228,7 +235,26 @@ button{
 
 }
 
-button:hover{
+.login-btn > a, .signup-btn > a {
+    color: var(--oxfordBlue);
+    padding: 5%;
+}
+
+.login-btn, .signup-btn {
+    width: 20vh;
+    height: 6vh;
+    border-radius: 20px;
+    &:hover {
+        background-color: var(--lightBlue);
+    }
+}
+
+.login-group {
+    display: flex;
+    column-gap: 2vh;
+}
+
+.button:hover{
     cursor: pointer;
 }
 

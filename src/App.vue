@@ -1,6 +1,4 @@
 <template>
-  <button> <router-link class="links" to="/login">Login Page</router-link> </button>
-  <button> <router-link class="links" to="/registration">Registration Page</router-link> </button>
   <NavComponent/>
   <router-view />   
   <FooterComponent/>

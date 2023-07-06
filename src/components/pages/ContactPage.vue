@@ -1,5 +1,6 @@
 <template>
     <section class="contact">
+        <h1>Contact Us</h1>
         <form class="contact-form" @submit.prevent="postUsers">
             <aside>
                 <label for="name">Name:</label>

@@ -18,10 +18,14 @@
             </ul>
             <article>
                 <form action="#">
-                    <input v-model="userInput" @input="searchSneaker($event)" type="search" placeholder="Search">
-                    <button type="submit">
+                    <!-- <input v-model="userInput" @keyup="searchSneaker" type="search" placeholder="Search"> -->
+                    <aside class="login-group">
+                      <button class="login-btn"> <router-link class="links" to="/login">Login</router-link> </button>
+                      <button class="signup-btn"> <router-link class="links" to="/registration">Sign Up</router-link> </button>
+                    </aside>
+                    <!-- <button type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    </button> -->
                 </form>
                 <router-link class="nav-link" to="/wishList">
                     <i class="fa-solid fa-heart"></i>
@@ -59,16 +63,11 @@ export default{
       }
     },
     searchSneaker() {
-      if (this.userInput !== "") {
-        this.typed = true;
-      }
-      // Filter the sneakers based on the user input
-      this.result = this.sneakers.filter(
-        (sneaker => sneaker.sneakerName.toLowerCase().includes(this.userInput.toLowerCase()))
+      this.result = this.sneakers.filter(sneaker =>
+        sneaker.sneakerName.toLowerCase().includes(this.userInput.trim().toLowerCase())
       );
-
-      return this.result;
-    },
+      this.typed = this.userInput.trim() !== '';
+    }
   },
   created() {
     this.getSneakers();
