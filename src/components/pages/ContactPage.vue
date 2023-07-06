@@ -25,7 +25,7 @@ export default {
  data() {
     return {
       users:[],
-      userApi:"http://localhost/sneakers/rest/api/V1/users.php",
+      userApi:"http://localhost/sneakers/rest/api/V1/contact.php",
       userObj:{
         name:"",
         email:"",
