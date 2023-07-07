@@ -37,7 +37,7 @@
                     </tr>
                     </tbody>
                 </table>
-            <button @click="logout" class="button">Log out</button>
+            <router-link to="/" @click="logout" class="button">Log out</router-link>
             </section>
         </main>
 </template>

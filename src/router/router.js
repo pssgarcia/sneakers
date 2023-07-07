@@ -7,6 +7,7 @@ import ShoppingCart from '../components/pages/ShoppingCart.vue';
 import WishList from '../components/pages/WishList.vue';
 import SneakersPage from '../components/pages/SneakersPage.vue';
 import LoginPage from "./../components/LoginPage.vue";
+import ProfilePage from "./../components/ProfilePage.vue";
 import RegistrationPage from "./../components/RegistrationPage.vue";
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
         path: "/registration",
         name: "RegistrationPage",
         component: RegistrationPage
+    },
+    {
+        path: "/profile",
+        name: "ProfilePage",
+        component: ProfilePage
     }
 ];
 

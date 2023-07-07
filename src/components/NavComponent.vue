@@ -1,7 +1,7 @@
 <template>
     <nav>
         <section>
-            <a href="#">
+            <a href="#sneakers  ">
                 <img src="../assets/img/sneakers-logo.png" alt="logo1">
                 <h2>Street Kicks</h2>
             </a>

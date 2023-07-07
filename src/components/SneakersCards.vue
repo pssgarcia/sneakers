@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <div class="message alert alert-success" v-if="addToCartMessage">{{ addToCartMessage }}</div>
+   <aside class="message-father">  
+      <div class="message-success" v-if="addToCartMessage">{{ addToCartMessage }}</div>
+      <div class="message-success" v-if="addToListMessage">{{ addToListMessage }}</div>
+   </aside>  
     <!-- <div class="cart-reference">
       {{ shoppingCart.length }} items in Cart
     </div> -->
@@ -41,6 +44,7 @@ export default {
          shoppingCart: [],
          wishList: [],
          addToCartMessage: '',
+         addToListMessage: '',
          sneakersImages: [
             "https://bit.ly/first-sneaker",
             "https://bit.ly/second-sneaker",
@@ -82,7 +86,7 @@ export default {
             VueCookies.set("cart", JSON.stringify(this.shoppingCart));
          }
 
-         this.addToCartMessage = `Item successfully added to the cart.`;
+         this.addToCartMessage = `Item successfully added to your cart.`;
       },
       addToWishList(sneaker) {
          if (VueCookies.isKey("wlist")) {
@@ -93,6 +97,8 @@ export default {
             this.wishList.push(sneaker);
             VueCookies.set("wlist", JSON.stringify(this.wishList));
          }
+
+         this.addToListMessage = `Item successfully added to your list.`;
       }
    }
 }
