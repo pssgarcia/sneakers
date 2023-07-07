@@ -1,7 +1,7 @@
 <template>
-    <main>
+    <main class="login-main">
         <section v-if="logged">
-            <ProfilePage/>
+            <HomePage />
         </section>
         <section class="container-login" v-else>
             <section class="left" >
@@ -13,18 +13,18 @@
                     </p>
                 </section>
                 <article class="content">
-                    <form @submit.prevent="login">
+                    <form class="form-login" @submit.prevent="login">
                         <section class="inputs">
                             <article class="article">
                                 <label for="userEmail">Your Email</label>
-                                <input type="email" name="userEmail" id="userEmail" placeholder="Email" v-model.lazy="userEmail">
+                                <input class="input" type="email" name="userEmail" id="userEmail" placeholder="Email" v-model.lazy="userEmail">
                             </article>
                             <article class="article">
                                 <label for="userPassword">Your Password</label>
-                                <input type="password" name="userPassword" id="userPassword" placeholder="Password" v-model.lazy="userPassword">
+                                <input class="input" type="password" name="userPassword" id="userPassword" placeholder="Password" v-model.lazy="userPassword">
                             </article>
                         </section>
-                        <button type="submit">Login</button>
+                        <button class="login-button" type="submit">Login</button>
                     </form>
                 </article>
             </section>
@@ -37,12 +37,12 @@
 
 <script>
 import VueCookies from 'vue-cookies';
-import ProfilePage from './ProfilePage.vue';      
+import HomePage from './pages/HomePage.vue';  
 
 export default {
     name: "LoginPage",
     components:{
-        ProfilePage
+        HomePage
     },
     data(){
         return{

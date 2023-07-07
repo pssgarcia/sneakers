@@ -27,10 +27,6 @@ p {
 li {
   list-style-type: none;
 }
-
-main {
-  padding-top: 5vh;
-}
 /*===================
 nav
 ====================*/
@@ -248,9 +244,11 @@ nav > ul {
    gap: 4vh;
    width: 100%;
    padding-bottom: 5vh;
-}
-
-.sneakers-card > figure {
+   padding-top: 5vh;
+  }
+  
+  .sneakers-card > figure {
+   border: 1px solid var(--indigoDye);
    width: 28%;
    padding: 1%;
    display: flex;
@@ -313,6 +311,20 @@ figcaption > p {
 
 .order-container {
    display: flex;
+}
+
+.message-father {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+}
+
+.message-success {
+  background-color: var(--oxfordBlue);
+  padding: 4vh;
+  color: var(--azure);
+  border-radius: 10px;
+  width: 30%;
 }
 
 .order-summary {
@@ -561,7 +573,7 @@ contact
   align-items: center;
   row-gap: 6vh;
   justify-content: center;
-  padding: 30vh 0;
+  padding: 10vh;
   background-color: var(--azure);
   > h1 {
     font-size: 30px;

@@ -1,7 +1,7 @@
 <template>
     <article class="lists">
       <aside>
-         <h2>Your Wish List</h2>
+         <h2>My Wish List</h2>
          <button class="btn-list" @click="clearList">Clear List</button>
       </aside>
       <section class="sneakers-card">

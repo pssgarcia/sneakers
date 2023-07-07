@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="signup-main">
         <section class="container_2">
             <img class="img_2" src="./../assets/img_4.jpg" alt="img_4">
             <section class="left">
@@ -31,7 +31,7 @@
                                 <input class="input" type="text" name="userAddress" id="userAddress" placeholder="Address" v-model.lazy="usersObj.userAddress">
                             </article>
                         </section>
-                        <button type="submit">Create your Account</button>
+                        <router-link to="/" type="submit">Create your Account</router-link>
                     </form>
                 </article>
             </section>

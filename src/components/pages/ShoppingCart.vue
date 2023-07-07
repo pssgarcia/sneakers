@@ -1,11 +1,11 @@
 <template>
    <article class="lists">
-      <h2>Your Cart</h2>
+      <h2>My Cart</h2>
       <aside>
          <div class="cart-reference">
             {{ localCart.length }}  items in cart
          </div>
-         <button @click="clearCart">Clear cart</button>
+         <button class="btn-list" @click="clearCart">Clear cart</button>
       </aside>
       <section class="order-container" v-if="localCart.length > 0">
          <section class="sneaker-cart" v-show="true">
